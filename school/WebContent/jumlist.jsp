@@ -35,8 +35,8 @@ background-color:lightgray">
 request.setCharacterEncoding("UTF-8");
 	try{
 		String sql="SELECT st.stuid, sname, subname, sc.subcode, proname, midscore, finalscore, attend, report, etc, "+
-					"TO_CHAR(midscore+finalscore+attend+report+etc)/5, '999'), "+
-					"TO_CHAR(midscore*0.3)+(finalscore*0.3)+(attend*0.2)+(report*0.1)+(etc*0.1), '999.0'), "+
+					"TO_CHAR((midscore+finalscore+attend+report+etc)/5,'999'), "+
+					"TO_CHAR((midscore*0.3)+(finalscore*0.3)+(attend*0.2)+(report*0.1)+(etc*0.1),'999'), "+
 					"(midscore*0.3)+(finalscore*0.3)+(attend*0.2)+(report*0.1)+(etc*0.1) "+
 					"FROM tbl_student_202210 st, tbl_score_202210 sc, tbl_subject_202210 su "+
 					"WHERE st.stuid=sc.sid AND sc.subcode=su.subcode "+
@@ -55,7 +55,7 @@ request.setCharacterEncoding("UTF-8");
 			else if(sum>=65) grade="D+";
 			else if(sum>=60) grade="D";
 			else grade="F";
-			%>
+%>
 			<tr>
 				<td> <%=rs.getString(1) %> </td>
 				<td> <%=rs.getString(2) %> </td>
@@ -66,17 +66,18 @@ request.setCharacterEncoding("UTF-8");
 				<td> <%=rs.getString(7) %> </td>
 				<td> <%=rs.getString(8) %> </td>
 				<td> <%=rs.getString(9) %> </td>
+				<td> <%=rs.getString(10) %> </td>
 				<td> <%=rs.getString(11) %> </td>
 				<td> <%=rs.getString(12) %> </td>
 				<td> <%=grade %> </td>
 			</tr>
-			<%
+<%
 		}
 	}
 	catch(Exception e) {
 		e.printStackTrace();
 	}
-			%>
+%>
 		
 	</table>
 </form>
