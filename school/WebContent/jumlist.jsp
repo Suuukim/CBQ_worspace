@@ -34,7 +34,7 @@ background-color:lightgray">
 <%
 request.setCharacterEncoding("UTF-8");
 	try{
-		String sql="SELECT st.stuid, sname, subname, sc.subcode, proname, midscore, finalscore, attend, report, etc, "+
+		String sql="SELECT st.stuid, snadme, subname, sc.subcode, proname, midscore, finalscore, attend, report, etc, "+
 					"TO_CHAR((midscore+finalscore+attend+report+etc)/5,'999'), "+
 					"TO_CHAR((midscore*0.3)+(finalscore*0.3)+(attend*0.2)+(report*0.1)+(etc*0.1),'999'), "+
 					"(midscore*0.3)+(finalscore*0.3)+(attend*0.2)+(report*0.1)+(etc*0.1) "+
