@@ -44,5 +44,11 @@ function add() {
 
 function res(){
 	alert("정보를 지우고 처음부터 다시 입력합니다!");
-	documnet.frm.reset();
+	document.frm.reset();
 }
+
+function res(){
+	alert("정보를 지우고 처음부터 다시 입력합니다!");
+	document.frm2.
+}
+
