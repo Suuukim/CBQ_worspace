@@ -20,6 +20,11 @@ background-color:lightgray">
 			<td> <input type="text" name="subcode"> </td>
 			<td> <input type="button" value="조회" onclick="search()"> </td>
 		</tr>
+		
+		<tr>
+			<td> </td>
+		</tr>
+		
 	</table>
 </form>
 </section>
