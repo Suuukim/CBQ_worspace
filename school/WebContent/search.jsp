@@ -22,7 +22,7 @@ background-color:lightgray">
 		</tr>
 		
 		<tr>
-			<td> </td>
+			<td> 과목 </td>
 		</tr>
 		
 	</table>
