@@ -51,7 +51,7 @@ try{
 	PreparedStatement pstmt = con.prepareStatement(sql);
 	ResultSet rs = pstmt.executeQuery();
 	while(rs.next()) {
-		
+		psrmt = 
 	}
 }
 catch(Exception e){
