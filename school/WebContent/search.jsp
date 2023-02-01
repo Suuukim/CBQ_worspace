@@ -37,7 +37,6 @@ background-color:lightgray">
 			<td> 레포트 </td>
 			<td> 기타 </td>
 			<td> 총점 </td>
-			<td> 학점 </td>
 		</tr>
 		
 <%
