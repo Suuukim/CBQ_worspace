@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<script type="text/javascript" src="check.js"></script>
 <jsp:include page="header.jsp"></jsp:include>
 
 <section style="position:fixed; top:70px; left:0px; width:100%; height:100%;
@@ -37,20 +37,37 @@ background-color:lightgray">
 			<td> 레포트 </td>
 			<td> 기타 </td>
 			<td> 총점 </td>
+			<td> 학점 </td>
 		</tr>
 		
 <%
 request.setCharacterEncoding("UTF-8");
+String subcode = request.getParameter("subcode");
 try{
 	String sql="SELECT stuid, sname, dept_name, subname, midscore, finalscore, attend, report, etc, "+
-			   "midscore*0.3 + finalscore"
-				"총점, 학점 "+
-			   "FROM "+
-			   "WHERE ";
+			   "TO_CHAR(midscore*0.3 + finalscore*0.3 + attend*0.2 + report*0.1 + etc*0.1, '999.0'), "+
+			   "midscore*0.3 + finalscore*0.3 + attend*0.2 + report*0.1 + etc*0.1 "+
+			   "FROM tbl_student_202210 st, tbl_score_202210 sc, tbl_subject_202210 su "+
+			   "WHERE st.stuid=sc.sid AND sc.subcode=su.subcode AND subcode=?";
 	PreparedStatement pstmt = con.prepareStatement(sql);
+	pstmt.setString(1, subcode);
 	ResultSet rs = pstmt.executeQuery();
 	while(rs.next()) {
-		psrmt = 
+		%>
+			<tr>
+				<td> <%=rs.getString(1) %> </td>
+				<td> <%=rs.getString(2) %> </td>
+				<td> <%=rs.getString(3) %> </td>
+				<td> <%=rs.getString(4) %> </td>
+				<td> <%=rs.getString(5) %> </td>
+				<td> <%=rs.getString(6) %> </td>
+				<td> <%=rs.getString(7) %> </td>
+				<td> <%=rs.getString(8) %> </td>
+				<td> <%=rs.getString(9) %> </td>
+				<td> <%=rs.getString(10) %> </td>
+				<td> <%=rs.getString(11) %> </td>
+			</tr>		
+		<%
 	}
 }
 catch(Exception e){
