@@ -68,7 +68,7 @@ try{
 				<td> <%=rs.getString(11) %> </td>
 			</tr>		
 			
-			
+			ditto
 		<%
 	}
 }
