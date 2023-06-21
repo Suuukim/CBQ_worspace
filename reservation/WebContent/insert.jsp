@@ -13,7 +13,7 @@
 <section style="position:fixed; top:70px; left:0px; width:100%; height:100%;
 background-color:lightgray">
 <h2 style="text-align:center">근무좌석예약</h2>
-<form method name="frm" style="display:flex; align-item:center; justify-content:center">
+<form method="post" action="i_action.jsp" name="frm" style="display:flex; align-item:center; justify-content:center">
 <table border="1">
 
 <tr>
